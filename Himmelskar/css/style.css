@@ -1,5 +1,4 @@
-body {
-    margin: 0;
+@font-face {
     font-family: 'MinEgendefinerteFont';
     src: url(/font/Queensides-3z7Ey.ttf) format('woff2'),
          url(/font/QueensidesLight-ZVj3l.ttf) format('woff');
@@ -7,24 +6,60 @@ body {
     font-style: normal;
 }
 
-.navbar {
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('/bilder/background1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'MinEgendefinerteFont', Arial, sans-serif; /* Bruker egendefinert font */
+}
+
+@font-face {
+    font-family: 'MinEgendefinerteFont';
+    src: url('fonts/min-egendefinerte-font.woff2') format('woff2'),
+         url('fonts/min-egendefinerte-font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('/bilder/background1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'MinEgendefinerteFont', Arial, sans-serif; /* Bruker egendefinert font */
+}
+
+.menybar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.8); /* Gjør bakgrunnsfargen litt gjennomsiktig */
     padding: 10px;
 }
 
-.navbar a {
+.menybar a {
     color: white;
-    text-decoration: none !important; /* Fjerner understrek */
-    padding: 15px;
+    text-decoration: none; /* Fjerner understrek */
+    padding: 10px;
     display: block;
     text-align: center;
     margin-left: auto;
 }
 
-.navbar a:hover {
+.menybar a:hover {
     background-color: #ddd;
     color: black;
 }
@@ -32,10 +67,28 @@ body {
 .container {
     width: 90%;
     max-width: 500px;
-    background-color: transparent;
-    padding: 20px;
+    background-color: rgba(71, 67, 67, 0.8); /* Gjør bakgrunnsfargen litt gjennomsiktig */
+    padding: 10px;
     box-shadow: 0 0 0px rgb(165, 42, 42);
     border-radius: 0px;
     text-align: center;
 }
 
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+}
