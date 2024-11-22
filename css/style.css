@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'MinEgendefinerteFont';
+    src: url('/font/Queensides-3z7Ey.ttf') format('woff2'),
+         url('/font/QueensidesLight-ZVj3l.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('/bilder/background1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'MinEgendefinerteFont', Arial, sans-serif; /* Bruker egendefinert font */
+    background-color: rgba(71, 67, 67, 0.8); /* Gjør bakgrunnsfargen litt gjennomsiktig */
+}
+
+.menybar {
+    display: flex;
+    justify-content: center; /* Sentraliserer menybaren */
+    align-items: center;
+    background-color: rgba(71, 67, 67, 0.8); /* Gjør bakgrunnsfargen litt gjennomsiktig */
+    padding: 5px;
+    width: 100%; /* Sørger for at menybaren strekker seg over hele bredden */
+}
+
+.menybar a {
+    color: rgb(221, 217, 217);
+    text-decoration: none; /* Fjerner understrek */
+    padding: 5px; /* Rettet padding-verdi */
+    display: block;
+    text-align: center;
+}
+
+.menybar a:hover {
+    background-color: #838181;
+    color: black;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    background-color: rgba(71, 67, 67, 0.8); /* Gjør bakgrunnsfargen litt gjennomsiktig */
+    padding: 5px;
+    box-shadow: 0 0 0px rgb(165, 42, 42);
+    border-radius: 0px;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: rgb(3, 3, 3); /* Setter samme skriftfarge for alle <h> og <p> elementer */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+}
