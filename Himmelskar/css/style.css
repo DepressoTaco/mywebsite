@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    font-family: 'MinEgendefinerteFont';
+    src: url(/font/Queensides-3z7Ey.ttf) format('woff2'),
+         url(/font/QueensidesLight-ZVj3l.ttf) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none !important; /* Fjerner understrek */
+    padding: 15px;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    background-color: transparent;
+    padding: 20px;
+    box-shadow: 0 0 0px rgb(165, 42, 42);
+    border-radius: 0px;
+    text-align: center;
+}
+
