@@ -108,25 +108,22 @@ body {
     background-color: #100720;
 }
 
-.container {
+.services-container {
     margin: 100px auto; /* Sentraliserer containeren horisontalt */
     width: 70%;
     display: flex;
     justify-content: center;
     gap: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.6); /* Felles border for alle bildene */
-    padding: 10px; /* Legger til padding for å gi plass til border */
 }
 
-.container img {
+.services-container img {
     width: 100px; /* Justert bredde */
     height: auto; /* Justert høyde */
     object-fit: cover;
     transition: all ease-in-out 0.5s;
 }
 
-.container img:hover {
+.services-container img:hover {
     width: 150px; /* Justert bredde ved hover */
 }
-
 
