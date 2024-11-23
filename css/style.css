@@ -22,14 +22,14 @@ body {
     display: flex;
     justify-content: center; /* Sentraliserer menybaren */
     align-items: center;
-    background: #170a2c;
+    background: rgba(71, 67, 67, 0.8);
     padding: 5px;
     width: 100%; /* Sørger for at menybaren strekker seg over hele bredden */
     position: relative; /* Legger til posisjonering for ::after pseudo-elementet */
 }
 
 .menybar a {
-    color: rgb(221, 217, 217);
+    color: rgba(238, 231, 231, 0.8);
     text-decoration: none; /* Fjerner understrek */
     padding: 5px; /* Rettet padding-verdi */
     display: block;
@@ -82,7 +82,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-    color: aliceblue; /* Setter samme skriftfarge for alle <h> og <p> elementer */
+    color: rgb(24, 25, 26); /* Setter samme skriftfarge for alle <h> og <p> elementer */
 }
 
 h1 {
@@ -103,3 +103,27 @@ p {
         font-size: 0.9em;
     }
 }
+
+body {
+    background-color: #100720;
+}
+
+.services-container {
+    margin: 100px auto; /* Sentraliserer containeren horisontalt */
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.services-container img {
+    width: 100px; /* Justert bredde */
+    height: auto; /* Justert høyde */
+    object-fit: cover;
+    transition: all ease-in-out 0.5s;
+}
+
+.services-container img:hover {
+    width: 150px; /* Justert bredde ved hover */
+}
+
