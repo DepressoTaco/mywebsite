@@ -10,64 +10,81 @@
 :root {
     --primary-bg: #170d29;
     --secondary-bg: rgba(97, 95, 95, 0.5); /* Økt gjennomsiktighet ved å redusere alfa-verdien */
-    --text-color: rgb(24, 25, 26);
+    --text-color: rgb(223, 227, 231);
     --link-color: rgba(238, 231, 231, 0.8);
     --hover-bg: #838181;
     --hover-color: black;
 }
 
-body {
+body, html {
     margin: 0;
     padding: 0;
-    background: var(--primary-bg);
-    background-image: url('/bilder/background1.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     font-family: 'MinEgendefinerteFont', Arial, sans-serif; /* Bruker egendefinert font */
-    background-color: var(--secondary-bg); /* Gjør bakgrunnsfargen litt gjennomsiktig */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
 .menybar {
     display: flex;
     justify-content: center; /* Sentraliserer menybaren */
     align-items: center;
-    background: var(--secondary-bg);
-    padding: 5px;
-    width: 100%; /* Sørger for at menybaren strekker seg over hele bredden */
-    position: relative; /* Legger til posisjonering for ::after pseudo-elementet */
+    background: rgba(0, 0, 0, 0.5); /* Gjennomsiktig bakgrunn */
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 20px;
 }
 
 .menybar a {
     color: var(--link-color);
     text-decoration: none; /* Fjerner understrek */
-    padding: 5px; /* Rettet padding-verdi */
-    display: block;
-    text-align: center;
-    transition: 0.1s;
-    position: relative; /* Legger til posisjonering for ::after pseudo-elementet */
-}
-
-.menybar a::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1) 100.2%);
-    filter: blur(165px);
-    z-index: -1;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.menybar a:active {
-    transform: scale(0.9) rotate(3deg); 
-    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1), rgba(2, 245, 255, 1));   
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
 }
 
 .menybar a:hover {
-    background-color: var(--hover-bg);
-    color: var(--hover-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menybar .active {
+    background-color: rgba(255, 255, 255, 0.2); /* Gjennomsiktig bakgrunn for aktivt element */
+    color: black;
+    position: relative;
+}
+
+.menybar .active::before {
+    content: '•';
+    color: pink;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .container {
@@ -77,7 +94,7 @@ body {
     align-items: center;
     width: 90%;
     max-width: 500px;
-    background-color: var(--secondary-bg); /* Gjør bakgrunnsfargen litt gjennomsiktig */
+    background-color: var(--secondary-bg); /* Gjør bakgrunnen litt gjennomsiktig */
     padding: 10px;
     box-shadow: 0 0 0px rgb(165, 42, 42);
     border-radius: 0px;

@@ -7,69 +7,77 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="menybar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Photos</a>
-        <a href="contact.html">Contact</a>
-    </div>
-    <div class="services-container">
-        <img src="/bilder/Tom1.png" alt="Bilde 1" onclick="openModal(this)">
-        <img src="/bilder/tom2.jpg" alt="Bilde 2" onclick="openModal(this)">
-        <img src="/bilder/tom3.jpg" alt="Bilde 3" onclick="openModal(this)">
-        <img src="/bilder/tom4.jpg" alt="Bilde 4" onclick="openModal(this)">
-        <img src="/bilder/tom5.jpg" alt="Bilde 5" onclick="openModal(this)">
-    </div>
+    <div class="video-container">
+        <video autoplay muted loop id="background-video">
+            <source src="/Video/7031309_Close-up_Slow Motion_3840x2160.mp4" type="video/mp4">
+            Din nettleser støtter ikke video.
+        </video>
+        <div class="content">
+            <div class="menybar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html" class="active">Photos</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="services-container">
+                <img src="/bilder/Tom1.png" alt="Bilde 1" onclick="openModal(this)">
+                <img src="/bilder/tom2.jpg" alt="Bilde 2" onclick="openModal(this)">
+                <img src="/bilder/tom3.jpg" alt="Bilde 3" onclick="openModal(this)">
+                <img src="/bilder/tom4.jpg" alt="Bilde 4" onclick="openModal(this)">
+                <img src="/bilder/tom5.jpg" alt="Bilde 5" onclick="openModal(this)">
+            </div>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal" onclick="closeModal(event)">
-        <span class="close" onclick="closeModal(event)">&times;</span>
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
-            <img id="modalImage" src="">
-            <span class="next" onclick="changeSlide(1)">&#10095;</span>
+            <!-- Modal -->
+            <div id="myModal" class="modal" onclick="closeModal(event)">
+                <span class="close" onclick="closeModal(event)">&times;</span>
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+                    <img id="modalImage" src="">
+                    <span class="next" onclick="changeSlide(1)">&#10095;</span>
+                </div>
+            </div>
+
+            <script>
+                var currentSlideIndex = 0;
+                var images = document.querySelectorAll('.services-container img');
+
+                function openModal(element) {
+                    var modal = document.getElementById("myModal");
+                    var modalImg = document.getElementById("modalImage");
+                    modal.style.display = "block";
+                    modalImg.src = element.src;
+                    currentSlideIndex = Array.from(images).indexOf(element);
+                }
+
+                function closeModal(event) {
+                    var modal = document.getElementById("myModal");
+                    if (event.target === modal || event.target.className === "close") {
+                        modal.style.display = "none";
+                    }
+                }
+
+                function changeSlide(direction) {
+                    currentSlideIndex += direction;
+                    if (currentSlideIndex >= images.length) {
+                        currentSlideIndex = 0;
+                    } else if (currentSlideIndex < 0) {
+                        currentSlideIndex = images.length - 1;
+                    }
+                    var modalImg = document.getElementById("modalImage");
+                    modalImg.src = images[currentSlideIndex].src;
+                }
+
+                document.getElementById("modalImage").addEventListener("click", function(event) {
+                    var modalWidth = this.clientWidth;
+                    var clickX = event.clientX - this.getBoundingClientRect().left;
+                    if (clickX < modalWidth / 2) {
+                        changeSlide(-1);
+                    } else {
+                        changeSlide(1);
+                    }
+                });
+            </script>
         </div>
     </div>
-
-    <script>
-        var currentSlideIndex = 0;
-        var images = document.querySelectorAll('.services-container img');
-
-        function openModal(element) {
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("modalImage");
-            modal.style.display = "block";
-            modalImg.src = element.src;
-            currentSlideIndex = Array.from(images).indexOf(element);
-        }
-
-        function closeModal(event) {
-            var modal = document.getElementById("myModal");
-            if (event.target === modal || event.target.className === "close") {
-                modal.style.display = "none";
-            }
-        }
-
-        function changeSlide(direction) {
-            currentSlideIndex += direction;
-            if (currentSlideIndex >= images.length) {
-                currentSlideIndex = 0;
-            } else if (currentSlideIndex < 0) {
-                currentSlideIndex = images.length - 1;
-            }
-            var modalImg = document.getElementById("modalImage");
-            modalImg.src = images[currentSlideIndex].src;
-        }
-
-        document.getElementById("modalImage").addEventListener("click", function(event) {
-            var modalWidth = this.clientWidth;
-            var clickX = event.clientX - this.getBoundingClientRect().left;
-            if (clickX < modalWidth / 2) {
-                changeSlide(-1);
-            } else {
-                changeSlide(1);
-            }
-        });
-    </script>
 </body>
 </html>
