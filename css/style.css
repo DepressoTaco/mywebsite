@@ -7,10 +7,6 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
     margin: 0;
     padding: 0;
     background: #100720;
@@ -19,20 +15,20 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     font-family: 'MinEgendefinerteFont', Arial, sans-serif; /* Bruker egendefinert font */
-    background-color: rgba(32, 32, 32, 0.8); /* Gjør bakgrunnsfargen litt gjennomsiktig */
+    background-color: rgba(71, 67, 67, 0.8); /* Gjør bakgrunnsfargen litt gjennomsiktig */
 }
 
 .menybar {
     display: flex;
     justify-content: center; /* Sentraliserer menybaren */
     align-items: center;
-    background: #39393a;
+    background: #170a2c;
     padding: 5px;
     width: 100%; /* Sørger for at menybaren strekker seg over hele bredden */
     position: relative; /* Legger til posisjonering for ::after pseudo-elementet */
 }
 
-.menybar-link {
+.menybar a {
     color: rgb(221, 217, 217);
     text-decoration: none; /* Fjerner understrek */
     padding: 5px; /* Rettet padding-verdi */
@@ -42,11 +38,11 @@ body {
     position: relative; /* Legger til posisjonering for ::after pseudo-elementet */
 }
 
-.menybar-link::after {
+.menybar a::after {
     content: '';
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle farthest-corner at 10% 20%, rgb(95, 50, 93) 17.8%, rgb(59, 119, 121) 100.2%);
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1) 100.2%);
     filter: blur(165px);
     z-index: -1;
     position: absolute;
@@ -54,17 +50,21 @@ body {
     top: 0;
 }
 
-.menybar-link:active {
+.menybar a:active {
     transform: scale(0.9) rotate(3deg); 
-    background: radial-gradient(circle farthest-corner at 10% 20%, rgb(90, 67, 89), rgb(71, 99, 100));   
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1), rgba(2, 245, 255, 1));   
 }
 
-.menybar-link:hover {
+.menybar a:hover {
     background-color: #838181;
     color: black;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 90%;
     max-width: 500px;
     background-color: rgba(71, 67, 67, 0.8); /* Gjør bakgrunnsfargen litt gjennomsiktig */
@@ -72,6 +72,7 @@ body {
     box-shadow: 0 0 0px rgb(165, 42, 42);
     border-radius: 0px;
     text-align: center;
+    margin: auto; /* Sentraliserer containeren */
 }
 
 .sticky {
@@ -81,7 +82,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-    color: rgb(10, 10, 10); /* Setter samme skriftfarge for alle <h> og <p> elementer */
+    color: aliceblue; /* Setter samme skriftfarge for alle <h> og <p> elementer */
 }
 
 h1 {
