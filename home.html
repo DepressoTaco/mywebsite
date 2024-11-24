@@ -3,19 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hjem</title>
+    <title>Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="refresh" content="0; URL='https://himmelskar.no/home.html'" />
 </head>
 <body>
-    <div class="menybar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Photos</a>
-        <a href="contact.html">Contact</a>
+    <div class="video-container">
+        <video autoplay muted loop playsinline webkit-playsinline id="background-video">
+            <source src="/Video/6413_Waves_Shore_1920x1080.mp4" type="video/mp4">
+            Din nettleser støtter ikke video.
+        </video>
+        <div class="content">
+            <div class="menybar">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Photos</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div id="home">
+                <h1>Velkommen til Hjemmesiden</h1>
+                <p>Dette er hjemmesiden.</p>
+            </div>
+        </div>
     </div>
-    <div class="container">
-        <h1>Velkommen til Hjemmesiden</h1>
-        <p>Dette er hjemmesiden.</p>
-    </div>
+    <script>
+        document.getElementById('background-video').playbackRate = 0.5; // Endre hastigheten her (0.5 er halv hastighet)
+    </script>
 </body>
 </html>
