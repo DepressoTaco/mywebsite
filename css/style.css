@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'MinEgendefinerteFont';
-    src: url('/font/Queensides-3z7Ey.ttf') format('woff2'),
-         url('/font/QueensidesLight-ZVj3l.ttf') format('woff');
+    src: url('font/Queensides-3z7Ey.ttf') format('woff2'),
+         url('font/QueensidesLight-ZVj3l.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -10,7 +10,7 @@
 :root {
     --primary-bg: #170d29;
     --secondary-bg: rgba(97, 95, 95, 0.5); /* Økt gjennomsiktighet ved å redusere alfa-verdien */
-    --text-color: rgb(223, 227, 231);
+    --text-color: rgb(184, 185, 187);
     --link-color: rgba(238, 231, 231, 0.8);
     --hover-bg: #838181;
     --hover-color: black;
@@ -48,16 +48,25 @@ body, html {
     color: white;
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Justerer innholdet til å starte fra toppen */
+    align-items: center;
+    height: 100vh; /* Sørger for at innholdet dekker hele høyden av vinduet */
+}
+
+.logo-container {
+    margin-top: 20px; /* Justerer avstanden fra toppen */
 }
 
 .menybar {
+    margin-top: 20px; /* Justerer avstanden fra logoen */
     display: flex;
     justify-content: center; /* Sentraliserer menybaren */
     align-items: center;
     background: rgba(0, 0, 0, 0.5); /* Gjennomsiktig bakgrunn */
     border-radius: 20px;
     padding: 10px 20px;
-    margin: 20px;
 }
 
 .menybar a {
